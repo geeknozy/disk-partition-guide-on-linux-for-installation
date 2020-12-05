@@ -74,12 +74,18 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
     
     ### Disk-partitions-done now formatting.
     
-    1. For EFI Partition - ```mkfs.fat -F 32 /dev/sdX1```  
+1. For EFI Partition  
+
+```mkfs.fat -F 32 /dev/sdX1```  
     
-    2. For root partition - ```mkfs.ext4 /dev/sdX2```
+2. For root partition  
+
+```mkfs.ext4 /dev/sdX2```
     
-    3. For Swap Partition. - ```mkswap /dev/sdX3```
+3. For Swap Partition.  
+
+```mkswap /dev/sdX3```
     `                          
-                             ```swapon /dev/sdX3```
+```swapon /dev/sdX3```
     
    
