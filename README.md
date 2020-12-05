@@ -12,10 +12,10 @@ NOTE: Im using fdisk utility to partition the disk.
    ```fdisk /dev/sdX```
    
    Note X here represents the disk alphabet. X may be sda/sdb/nvmep01/etc...
-   
-3. Now Follow below steps.
 
 NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks refer this for partition scheme table. 
+
+3. Now Follow below steps.
 
     ```d``` -> hit d and select partition number until all the partitions are 
 
