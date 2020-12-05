@@ -72,7 +72,7 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
     ```w``` -> this will write partition 
     
     
-    ### Disk-partitions-done now formatting.
+### Disk-partitions-done now formatting.
     
 1. For EFI Partition  
 
