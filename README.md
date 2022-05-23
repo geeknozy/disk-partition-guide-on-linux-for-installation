@@ -18,10 +18,11 @@ NOTE: Im using fdisk utility to partition the disk.
 
 NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks refer this for partition table schema. 
 
-----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------<br>
 
 #### 3. Now Follow below steps.
-   #### EFI partition
+
+#### EFI partition
 
     ```d``` -> hit d and select partition number until all the partitions are deleted <br>
 
@@ -42,7 +43,7 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
     
     ```L``` to list types -> and press Q to quit the list and select 1 on the prompt for - EFI 
     
-    ----------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------<br>
     
    #### SWAP partition.
     
@@ -64,8 +65,10 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
     
     ```L``` to list types -> and press Q to quit the list and select 19 on the prompt for - EFI 
     
-----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------<br>
+
 #### Root partition
+
    ```n``` - > new partition.
     
     Hit enter for starting sector
