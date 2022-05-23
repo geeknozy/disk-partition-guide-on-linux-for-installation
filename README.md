@@ -24,24 +24,16 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
 
 #### EFI partition
 
-    ```d``` -> hit d and select partition number until all the partitions are deleted <br>
-
-    ```g``` -> creates new gpt label for disk. <br>
-
-    ```n``` -> new partition <br>
-    
-    ```hit from 2048---end``` -> starting sector. <br>
-    
-    when fdisk asks for +/-/ end type
-    
-    ```+512M``` -> EFI partition size of 512MB (At least 260 MiB ) 
-    
-    hit yes for removing signature of existing partitons.<br>
-    
-    ```t``` -> to change the type of the partition
-    -> select partition number 1,2,3 etc. 
-    
-    ```L``` to list types -> and press Q to quit the list and select 1 on the prompt for - EFI 
+```d``` -> hit d and select partition number until all the partitions are deleted <br>
+```g``` -> creates new gpt label for disk. <br>
+```n``` -> new partition <br>
+```hit from 2048---end``` -> starting sector. <br>
+when fdisk asks for +/-/ end type
+```+512M``` -> EFI partition size of 512MB (At least 260 MiB ) 
+hit yes for removing signature of existing partitons.<br>
+```t``` -> to change the type of the partition
+-> select partition number 1,2,3 etc. 
+```L``` to list types -> and press Q to quit the list and select 1 on the prompt for - EFI 
     
     ----------------------------------------------------------------------------------------------------------<br>
     
