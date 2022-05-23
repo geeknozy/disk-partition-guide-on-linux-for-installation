@@ -25,13 +25,13 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
 
 #### EFI partition<br>
 
-```d``` -> hit d and select partition number until all the partitions are deleted <br>
+- ```d``` -> hit d and select partition number until all the partitions are deleted <br>
 
-```g``` -> creates new gpt label for disk. <br>
+- ```g``` -> creates new gpt label for disk. <br>
 
-```n``` -> new partition <br>
+- ```n``` -> new partition <br>
 
-```hit from 2048---end``` -> starting sector. <br>
+- ```hit from 2048---end``` -> starting sector. <br>
 
 when fdisk asks for +/-/ end type<br>
 
@@ -80,16 +80,18 @@ now write the partitions<br>
     
 1. For EFI Partition  
 
-```mkfs.fat -F 32 /dev/sdX1```  
+```mkfs.fat -F 32 /dev/sdX1```
+
+2. For Swap Partition.  
+
+```mkswap /dev/sdX2```
+    `                          
+```swapon /dev/sdX2```
     
 2. For root partition  
 
-```mkfs.ext4 /dev/sdX2```
+```mkfs.ext4 /dev/sdX3```
     
-3. For Swap Partition.  
 
-```mkswap /dev/sdX3```
-    `                          
-```swapon /dev/sdX3```
     
    
