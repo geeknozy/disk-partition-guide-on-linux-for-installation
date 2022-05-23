@@ -5,7 +5,9 @@
 NOTE: Im using fdisk utility to partition the disk.
 
 #### 1. Open Your terminal and type
+
 ```fdisk -l```<br>
+
 ----------------------------------------------------------------------------------------------------------
 
 #### 2. Now you see the list of storage devices on your system.
