@@ -19,13 +19,13 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
 
 3. Now Follow below steps.
 
-    ```d``` -> hit d and select partition number until all the partitions are 
+    ```d``` -> hit d and select partition number until all the partitions are deleted <br>
 
-    ```g``` -> creates new gpt label for disk.
+    ```g``` -> creates new gpt label for disk. <br>
 
-    ```n``` -> new partition
+    ```n``` -> new partition <br>
     
-    ```hit from 2048---end``` -> starting sector.
+    ```hit from 2048---end``` -> starting sector. <br>
     
     when fdisk asks for +/-/ end type
     
