@@ -1,14 +1,15 @@
 ## Disk-partition-guide-on-linux-for-Arch-Linux-installation on UEFI devices.
 
 ### THIS WILL ERASE DATA on Disk!!!
-
+----------------------------------------------------------------------------------------------------------
 NOTE: Im using fdisk utility to partition the disk.
 
-1. Open Your terminal and type
+#### 1. Open Your terminal and type
 
-    ```fdisk -l```
+    ```fdisk -l``` <br>
+----------------------------------------------------------------------------------------------------------
 
-2. Now you see the list of storage devices on your system.
+#### 2. Now you see the list of storage devices on your system.
    Select the device as below command.
    
    ```fdisk /dev/sdX```
@@ -17,7 +18,10 @@ NOTE: Im using fdisk utility to partition the disk.
 
 NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks refer this for partition table schema. 
 
-3. Now Follow below steps.
+----------------------------------------------------------------------------------------------------------
+
+#### 3. Now Follow below steps.
+   #### EFI partition
 
     ```d``` -> hit d and select partition number until all the partitions are deleted <br>
 
@@ -31,26 +35,42 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
     
     ```+512M``` -> EFI partition size of 512MB (At least 260 MiB ) 
     
-    hit yes for removing signature of existing partitons.
+    hit yes for removing signature of existing partitons.<br>
     
     ```t``` -> to change the type of the partition
     -> select partition number 1,2,3 etc. 
     
-    ```L``` to list types -> select 1 - EFI 
+    ```L``` to list types -> and press Q to quit the list and select 1 on the prompt for - EFI 
     
-    NEXT is Root partition.
+    ----------------------------------------------------------------------------------------------------------
     
-    ```n``` -> new partition
+   #### SWAP partition.
+    
+   ```n``` - > new partition.
     
     Hit enter for starting sector
     
     when fdisk asks for +/-/ end type
 
-    ```-your RAM-size + 1G``` -> keep last part of your disk for SWAP partition. (Hibernate Support)
+    ```+your RAM-size + 1G``` -> for Hibernate Support
+    example: if your ram size is 8GB then ```+9GB```
     
-    ```4G``` or ```8G``` -> Common swap partition. (Without Hibernate support).
+    ```+4G``` or ```+8G``` -> Common swap partition. (Without Hibernate support).
     
     hit yes for removing signature of existing partitons.
+    
+    ```t``` -> to change the type of the partition
+    -> select partition number 1,2,3 etc. (2 in this case)
+    
+    ```L``` to list types -> and press Q to quit the list and select 19 on the prompt for - EFI 
+    
+----------------------------------------------------------------------------------------------------------
+#### Root partition
+   ```n``` - > new partition.
+    
+    Hit enter for starting sector
+    
+    when fdisk asks for +/-/ end hit enter this is the last partition and end of disk.
     
     This is the root partitions so it must be in Linux File System type.
     
@@ -58,20 +78,13 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
     -> select partition number 1,2,3 etc. 
     
     ```L``` to list types -> select 20 - Linux File System.
+        
+    NOW to write the partitions
     
-    NEXT is SWAP partition.
+    ```w``` -> this will write partition
     
-   ```n``` - > new partition.
-   
-    Hit enter for starting sector
-    
-    when fdisk asks for +/-/ end hit enter this is the last partition and end of disk.
-    
-    NOW to write the partition 
-    
-    ```w``` -> this will write partition 
-    
-    
+----------------------------------------------------------------------------------------------------------
+
 ### Disk-partitions-done now formatting.
     
 1. For EFI Partition  
