@@ -1,85 +1,71 @@
 ## Disk-partition-guide-on-linux-for-Arch-Linux-installation on UEFI devices.
 
 ### THIS WILL ERASE DATA on Disk!!!
-----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------<br>
 NOTE: Im using fdisk utility to partition the disk.
 
 #### 1. Open Your terminal and type
 
 ```fdisk -l```<br>
 
-----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------<br>
 
-#### 2. Now you see the list of storage devices on your system.
-   Select the device as below command.
+#### 2. Now you see the list of storage devices on your system.<br>
+   Select the device as below command.<br><br>
    
-   ```fdisk /dev/sdX```
+   ```fdisk /dev/sdX```<br>
    
-   Note X here represents the disk alphabet. X may be sda/sdb/nvmep01/etc...
+   Note X here represents the disk alphabet. X may be sda/sdb/nvmep01/etc...<br>
 
-NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks refer this for partition table schema. 
+NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks refer this for partition table schema. <br>
 
 ----------------------------------------------------------------------------------------------------------<br>
 
-#### 3. Now Follow below steps.
+#### 3. Now Follow below steps.<br>
 
-#### EFI partition
+#### EFI partition<br>
 
 ```d``` -> hit d and select partition number until all the partitions are deleted <br>
 ```g``` -> creates new gpt label for disk. <br>
 ```n``` -> new partition <br>
 ```hit from 2048---end``` -> starting sector. <br>
-when fdisk asks for +/-/ end type
-```+512M``` -> EFI partition size of 512MB (At least 260 MiB ) 
+when fdisk asks for +/-/ end type<br>
+```+512M``` -> EFI partition size of 512MB (At least 260 MiB ) <br>
 hit yes for removing signature of existing partitons.<br>
-```t``` -> to change the type of the partition
--> select partition number 1,2,3 etc. 
-```L``` to list types -> and press Q to quit the list and select 1 on the prompt for - EFI 
+```t``` -> to change the type of the partition<br>
+-> select partition number 1,2,3 etc. <br>
+```L``` to list types -> and press Q to quit the list and select 1 on the prompt for - EFI <br>
     
-    ----------------------------------------------------------------------------------------------------------<br>
+----------------------------------------------------------------------------------------------------------<br>
+   
+#### SWAP partition.<br>
     
-   #### SWAP partition.
-    
-   ```n``` - > new partition.
-    
-    Hit enter for starting sector
-    
-    when fdisk asks for +/-/ end type
-
-    ```+your RAM-size + 1G``` -> for Hibernate Support
-    example: if your ram size is 8GB then ```+9GB```
-    
-    ```+4G``` or ```+8G``` -> Common swap partition. (Without Hibernate support).
-    
-    hit yes for removing signature of existing partitons.
-    
-    ```t``` -> to change the type of the partition
-    -> select partition number 1,2,3 etc. (2 in this case)
-    
-    ```L``` to list types -> and press Q to quit the list and select 19 on the prompt for - EFI 
+```n``` - > new partition.<br>
+Hit enter for starting sector<br>
+when fdisk asks for +/-/ end type<br>
+```+your RAM-size + 1G``` -> for Hibernate Support<br>
+example: if your ram size is 8GB then ```+9GB```<br>
+```+4G``` or ```+8G``` -> Common swap partition. (Without Hibernate support).<br>
+hit yes for removing signature of existing partitons.<br>
+```t``` -> to change the type of the partition<br>
+-> select partition number 1,2,3 etc. (2 in this case)<br>
+```L``` to list types -> and press Q to quit the list and select 19 on the prompt for - EFI <br>
     
 ----------------------------------------------------------------------------------------------------------<br>
 
-#### Root partition
+#### Root partition<br>
 
-   ```n``` - > new partition.
+```n``` - > new partition.<br>
+Hit enter for starting sector<br>
+when fdisk asks for +/-/ end hit enter this is the last partition and end of disk.<br>
+This is the root partitions so it must be in Linux File System type.<br>
+```t``` -> to change the type of the partition<br>
+-> select partition number 1,2,3 etc. <br>
+```L``` to list types -> select 20 - Linux File System.<br>
+now write the partitions<br>
+```w``` -> this will write partition<br>
     
-    Hit enter for starting sector
-    
-    when fdisk asks for +/-/ end hit enter this is the last partition and end of disk.
-    
-    This is the root partitions so it must be in Linux File System type.
-    
-    ```t``` -> to change the type of the partition
-    -> select partition number 1,2,3 etc. 
-    
-    ```L``` to list types -> select 20 - Linux File System.
-        
-    NOW to write the partitions
-    
-    ```w``` -> this will write partition
-    
-----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------<br>
 
 ### Disk-partitions-done now formatting.
     
