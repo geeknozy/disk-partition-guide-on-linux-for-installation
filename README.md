@@ -11,11 +11,11 @@ NOTE: Im using fdisk utility to partition the disk.
 ----------------------------------------------------------------------------------------------------------<br>
 
 #### 2. Now you see the list of storage devices on your system.<br>
-   Select the device as below command.<br><br>
+Select the device as below command.<br><br>
    
    ```fdisk /dev/sdX```<br>
    
-   Note X here represents the disk alphabet. X may be sda/sdb/nvmep01/etc...<br>
+Note X here represents the disk alphabet. X may be sda/sdb/nvmep01/etc...<br>
 
 NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks refer this for partition table schema. <br>
 
@@ -33,32 +33,32 @@ NOTE: https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disk
 
 - ```hit from 2048---end``` -> starting sector. <br>
 
-when fdisk asks for +/-/ end type<br>
+- when fdisk asks for +/-/ end type<br>
 
-```+512M``` -> EFI partition size of 512MB (At least 260 MiB ) <br>
+-```+512M``` -> EFI partition size of 512MB (At least 260 MiB ) <br>
 
-hit yes for removing signature of existing partitons.<br>
+- hit yes for removing signature of existing partitons.<br>
 
-```t``` -> to change the type of the partition<br>
+- ```t``` -> to change the type of the partition<br>
 
--> select partition number 1,2,3 etc. <br>
+- -> select partition number 1,2,3 etc. <br>
 
-```L``` to list types -> and press Q to quit the list and select 1 on the prompt for - EFI <br>
+- ```L``` to list types -> and press Q to quit the list and select 1 on the prompt for - EFI <br>
     
 ----------------------------------------------------------------------------------------------------------<br>
    
 #### SWAP partition.<br>
     
-```n``` - > new partition.<br>
-Hit enter for starting sector<br>
-when fdisk asks for +/-/ end type<br>
-```+your RAM-size + 1G``` -> for Hibernate Support<br>
-example: if your ram size is 8GB then ```+9GB```<br>
-```+4G``` or ```+8G``` -> Common swap partition. (Without Hibernate support).<br>
-hit yes for removing signature of existing partitons.<br>
-```t``` -> to change the type of the partition<br>
--> select partition number 1,2,3 etc. (2 in this case)<br>
-```L``` to list types -> and press Q to quit the list and select 19 on the prompt for - EFI <br>
+- ```n``` - > new partition.<br>
+- Hit enter for starting sector<br>
+- when fdisk asks for +/-/ end type<br>
+- ```+your RAM-size + 1G``` -> for Hibernate Support<br>
+- example: if your ram size is 8GB then ```+9GB```<br>
+- ```+4G``` or ```+8G``` -> Common swap partition. (Without Hibernate support).<br>
+- hit yes for removing signature of existing partitons.<br>
+- ```t``` -> to change the type of the partition<br>
+- -> select partition number 1,2,3 etc. (2 in this case)<br>
+- ```L``` to list types -> and press Q to quit the list and select 19 on the prompt for - EFI <br>
     
 ----------------------------------------------------------------------------------------------------------<br>
 
